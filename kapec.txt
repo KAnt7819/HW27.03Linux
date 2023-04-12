@@ -1,0 +1,86 @@
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/nvme0n1p1   20G  9.1G   11G  46% /
+  999  df -h / > kapec.txt
+ 1000  cat /home/280223/ANTON/kapec.txt
+ 1001  cat history | tail -n 5 >> kapec.txt
+ 1002  cat /home/280223/ANTON/kapec.txt
+ 1003  history | tail -n 5 >> kapec.txt
+AuthenticAMD
+123
+
+ 1 уровень сложности: Запишите в новый файл дату.
+Допишите в этот файл информацию о занятом пространстве на корневом разделе файловой системы (/) 
+Допишите в файл пять последних команд из истории команд.
+Допишите в файл информацию о процессоре (/proc/cpuinfo), но отсортируйте информацию о процессоре так, чтобы остался только производитель (vendor). 
+В текстовом редакторе удалите все лишнее, чтобы остался только сам вендор (например GenuineIntel или AuthenticX86)
+Допишите в файл количество процессов одним числом ( не забудьте, что первая строка не выводит сам процесс, а лишь заголовок).
+Что вам понадобится: 
+ps -ef, date, df и df -h, history, grep, cat, wc -l, tail +n (строка)
+Экспортируйте и пришлите результирующий файл в формате txt 
+
+
+
+[280223@ip-172-31-33-20 ~]$ cd /home/280223/ANTON
+[280223@ip-172-31-33-20 ANTON]$ touch /home/280223/ANTON/kapec.txt
+[280223@ip-172-31-33-20 ANTON]$ cat /home/280223/ANTON/kapec.txt
+[280223@ip-172-31-33-20 ANTON]$ ls
+file1.txt  file.txt  kapec.txt  script.sh  script.sh.save
+[280223@ip-172-31-33-20 ANTON]$ df -h / > kapec.txt
+[280223@ip-172-31-33-20 ANTON]$ cat /home/280223/ANTON/kapec.txt
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/nvme0n1p1   20G  9.1G   11G  46% /
+[280223@ip-172-31-33-20 ANTON]$ cat history | tail -n 5 >> kapec.txt
+cat: history: No such file or directory
+[280223@ip-172-31-33-20 ANTON]$ cat /home/280223/ANTON/kapec.txt
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/nvme0n1p1   20G  9.1G   11G  46% /
+[280223@ip-172-31-33-20 ANTON]$ history | tail -n 5 >> kapec.txt
+[280223@ip-172-31-33-20 ANTON]$ cat /home/280223/ANTON/kapec.txt
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/nvme0n1p1   20G  9.1G   11G  46% /
+  999  df -h / > kapec.txt
+ 1000  cat /home/280223/ANTON/kapec.txt
+ 1001  cat history | tail -n 5 >> kapec.txt
+ 1002  cat /home/280223/ANTON/kapec.txt
+ 1003  history | tail -n 5 >> kapec.txt
+[280223@ip-172-31-33-20 ANTON]$ cat /proc/cpuinfo | grep 'vendor' | sort | uniq >> kapec.txt
+[280223@ip-172-31-33-20 ANTON]$ cat /home/280223/ANTON/kapec.txt
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/nvme0n1p1   20G  9.1G   11G  46% /
+  999  df -h / > kapec.txt
+ 1000  cat /home/280223/ANTON/kapec.txt
+ 1001  cat history | tail -n 5 >> kapec.txt
+ 1002  cat /home/280223/ANTON/kapec.txt
+ 1003  history | tail -n 5 >> kapec.txt
+vendor_id       : AuthenticAMD
+[280223@ip-172-31-33-20 ANTON]$ nano .
+[280223@ip-172-31-33-20 ANTON]$ nano .kapec.txt
+[280223@ip-172-31-33-20 ANTON]$ nano kapec.txt
+[280223@ip-172-31-33-20 ANTON]$ cat /home/280223/ANTON/kapec.txt
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/nvme0n1p1   20G  9.1G   11G  46% /
+  999  df -h / > kapec.txt
+ 1000  cat /home/280223/ANTON/kapec.txt
+ 1001  cat history | tail -n 5 >> kapec.txt
+ 1002  cat /home/280223/ANTON/kapec.txt
+ 1003  history | tail -n 5 >> kapec.txt
+AuthenticAMD
+[280223@ip-172-31-33-20 ANTON]$ cat ps -ef | tail -n +2 | wc -l
+cat: invalid option -- 'f'
+Try 'cat --help' for more information.
+0
+[280223@ip-172-31-33-20 ANTON]$  ps -ef | tail -n +2 | wc -l
+123
+[280223@ip-172-31-33-20 ANTON]$  ps -ef | tail -n +2 | wc -l >> kapec.txt
+[280223@ip-172-31-33-20 ANTON]$ cat /home/280223/ANTON/kapec.txt
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/nvme0n1p1   20G  9.1G   11G  46% /
+  999  df -h / > kapec.txt
+ 1000  cat /home/280223/ANTON/kapec.txt
+ 1001  cat history | tail -n 5 >> kapec.txt
+ 1002  cat /home/280223/ANTON/kapec.txt
+ 1003  history | tail -n 5 >> kapec.txt
+AuthenticAMD
+123
+[280223@ip-172-31-33-20 ANTON]$ exit
+logout
